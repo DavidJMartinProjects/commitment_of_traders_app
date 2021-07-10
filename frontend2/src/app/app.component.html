@@ -18,18 +18,20 @@
       <span>Commitment of Traders</span>
     </mat-toolbar>   -->
 
-
-
-  <div class="row justify-content-center center-box enter">    
-      <mat-form-field appearance="outline" color="secondary" class="my-3 enter">
-        <mat-label>Select Symbol</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let symbol of symbols" [value]="symbol.pair" (click)="getReportBySymbol(symbol.pair)">
-            {{symbol.pair}}            
-          </mat-option>          
-        </mat-select>
-      </mat-form-field>
+  <div class="row my-logo">
     
+  </div>
+
+  <div class="row justify-content-center center-box enter">
+    <mat-form-field appearance="outline" color="secondary" class="my-3 enter">
+      <mat-label>Select Symbol</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let symbol of symbols" [value]="symbol.pair" (click)="getReportBySymbol(symbol.pair)">
+          {{symbol.pair}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
   </div>
 
   <div class="container center-box nav-toolbar " *ngIf="reports.length > 0">
