@@ -1,0 +1,6 @@
+report:
+  field:
+    removal-list:
+      phrase-one: ' - CHICAGO MERCANTILE EXCHANGE'
+      phrase-two: ' - COMMODITY EXCHANGE INC.'
+      phrase-three: ' - CHICAGO BOARD OF TRADE'
