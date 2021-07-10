@@ -5,18 +5,28 @@
  .center-box {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;    
   }
 
- .example-additional-selection {
-    opacity: 0.75;
-    font-size: 0.75em;
+  .nav-toolbar {
+    margin: 1em;
+  }
+  
+  .my-padding {
+    margin: .5em;
   }
 
-  .mat-select-panel {
-      margin: 15px;
+  .mat-form-field {
+    font-size: inherit;
+    font-weight: 400;
+    line-height: 1.125;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+}
 
-  }
+.mat-card {
+  width: 80%;
+}
 
 .mat-toolbar {
     background-color: rgba(0,0,0,.04);
