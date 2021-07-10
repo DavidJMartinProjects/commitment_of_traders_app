@@ -34,7 +34,20 @@ public class ReportDto {
         this.instrument = instrument
             .replace(" - CHICAGO MERCANTILE EXCHANGE", "")
             .replace(" - COMMODITY EXCHANGE INC.", "")
-            .replace(" - CHICAGO BOARD OF TRADE", "");
+            .replace(" - CHICAGO BOARD OF TRADE", "")
+
+            .replace("EURO FX", "EURO")
+            .replace("CANADIAN DOLLAR", "CAD")
+            .replace("SWISS FRANC", "CHF")
+            .replace("BRITISH POUND STERLING", "GBP")
+            .replace("JAPANESE YEN", "JPY")
+            .replace("AUSTRALIAN DOLLAR", "AUD")
+            .replace("RUSSIAN RUBLE", "RUB")
+            .replace("MEXICAN PESO", "MXN")
+            .replace("SOUTH AFRICAN RAND", "ZAR")
+            .replace("BITCOIN", "BTC")
+            .replace("MEXICAN PESO", "MXN")
+            .replace("NEW ZEALAND DOLLAR", "NZD");
     }
 
 }

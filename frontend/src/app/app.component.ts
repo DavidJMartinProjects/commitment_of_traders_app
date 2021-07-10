@@ -1,3 +1,4 @@
+import { ReportData } from './../_models/ReportData.model';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,9 +8,26 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'commitment of traders report.';
-  data: any; 
+
+  colData = [
+    {pair: 'AUS'}, 
+    {pair: 'CAD'},
+    {pair: 'EUR'}, 
+    {pair: 'JPY'}, 
+    {pair: 'GBP'}, 
+    {pair: 'MXN'}, 
+    {pair: 'ZAR'}, 
+    {pair: 'RUB'}, 
+    {pair: 'BTC'}
+  ]; 
+
+  rowData: any; 
 
   successAlert = false;
+
+  getReportBySymbol(pair: string) {
+    console.log("clicked " + pair);
+  }
 
   copyToClipboard(value: string): void {
     const tempInput = document.createElement("input");

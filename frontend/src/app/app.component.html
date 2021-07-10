@@ -46,17 +46,12 @@
     </button>
 
     <div class="dropdown-menu">
-      <a class="dropdown-item center-box" href="#">AUS</a>
-      <a class="dropdown-item center-box" href="#">USD</a>
-      <a class="dropdown-item center-box" href="#">GBP</a>
-      <a class="dropdown-item center-box" href="#">EUR</a>
-      <a class="dropdown-item center-box" href="#">CHF</a>
-      <a class="dropdown-item center-box" href="#">YEN</a>
-      <a class="dropdown-item center-box" href="#">CAD</a>
+      <div *ngFor="let column of colData" class="dropdown-item center-box" (click)="getReportBySymbol(column.pair)">
+        {{column.pair}}
+      </div>      
     </div>
   </div>
 </div>
-
 
 <div class="container">
   <table class="table home-table">
@@ -72,7 +67,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let game of data">
+      <tr *ngFor="let game of rowData">
         <td>{{game.startDate}}</td>
         <td>{{game.startTime}}</td>
         <td>{{game.description}}</td>
