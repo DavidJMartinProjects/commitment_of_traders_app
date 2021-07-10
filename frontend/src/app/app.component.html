@@ -56,27 +56,27 @@
 <div class="container">
   <table class="table home-table">
     <thead>
-      <tr>
-        <th>Report Date</th>
-        <th>Change Long</th>
-        <th>Change Short</th>
-        <th>% Long</th>
-        <th>% Short</th>
-        <th>Long Positions</th>
-        <th>Short Positions</th>
+      <tr >
+        <th class="row-data">Report Date</th>
+        <th class="row-data">Long</th>
+        <th class="row-data">Short</th>
+        <th class="row-data">Change Long</th>
+        <th class="row-data">Change Short</th>
+        <th class="row-data">% Long</th>
+        <th class="row-data">% Short</th>
+        <th class="row-data">Net Positions</th>        
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let game of rowData">
-        <td>{{game.startDate}}</td>
-        <td>{{game.startTime}}</td>
-        <td>{{game.description}}</td>
-        <td>{{game.active}}</td>
-        <td class="justify-contents-center">
-          <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#create-event-modal">Edit</button>
-          <button class="btn btn-danger btn-sm mx-3">Delete</button>
-        </td>
+      <tr *ngFor="let report of reports">
+        <td class="row-data">{{report.reportDate}}</td>
+        <td class="row-data">{{report.longPositions}}</td>
+        <td class="row-data">{{report.shortPositions}}</td>
+        <td class="row-data">{{report.changeLong}}</td>
+        <td class="row-data">{{report.changeShort}}</td>
+        <td class="row-data">{{report.percentageLong}} %</td>
+        <td class="row-data">{{report.percentageShort}} %</td>
+        <td class="row-data">{{report.netPositions}}</td>
       </tr>
     </tbody>
   </table>
-</div>

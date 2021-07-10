@@ -1,5 +1,8 @@
 import { ReportData } from './../_models/ReportData.model';
 import { Component } from '@angular/core';
+import { RestClient } from 'src/_services/backend.rest.client';
+
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +12,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'commitment of traders report.';
 
+  constructor(private restClient: RestClient) {
+    this.getReportBySymbol('AUD');   
+  }
+
+  data: any; 
+  reports: ReportData[] = new Array();
+  observableReport = of(this.reports);
+
   colData = [
-    {pair: 'AUS'}, 
+    {pair: 'AUD'}, 
     {pair: 'CAD'},
+    {pair: 'CHF'},
     {pair: 'EUR'}, 
     {pair: 'JPY'}, 
     {pair: 'GBP'}, 
@@ -25,22 +37,14 @@ export class AppComponent {
 
   successAlert = false;
 
-  getReportBySymbol(pair: string) {
+  public getReportBySymbol(pair: string) {
     console.log("clicked " + pair);
+    
+
+    this.restClient.getReportBySymbol(pair).subscribe((response: any) => {
+      console.log("response: " + response);
+      this.reports = response
+    })
   }
 
-  copyToClipboard(value: string): void {
-    const tempInput = document.createElement("input");
-    tempInput.value = value;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand("copy");
-    document.body.removeChild(tempInput);
-
-    this.successAlert = true;
-
-    setTimeout(() => {
-      this.successAlert = false;
-    }, 900);
-  }
 }

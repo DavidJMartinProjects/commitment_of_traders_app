@@ -24,11 +24,11 @@ import lombok.extern.slf4j.Slf4j;
 public class ReportDownloader {
 
     public static final String REPORT_DOWNLOAD_LOCATION = "src/main/resources/downloads/";
-//    public static final String REPORT_DOWNLOAD_URL = "https://www.cftc.gov/files/dea/history/dea_fut_xls_2021.zip";
-    public static final String REPORT_DOWNLOAD_URL = "https://www.cftc.gov/files/dea/history/fut_fin_xls_2021.zip";
+    public static final String REPORT_DOWNLOAD_URL = "https://www.cftc.gov/files/dea/history/dea_fut_xls_2021.zip";
+//    public static final String REPORT_DOWNLOAD_URL = "https://www.cftc.gov/files/dea/history/fut_fin_xls_2021.zip";
 
-    public static final String REPORT_ZIPPED_FILENAME = "fut_fin_xls_2021.zip";
-    public static final String REPORT_UNZIPPED_FILENAME = "FinFutYY.xls";
+    public static final String REPORT_ZIPPED_FILENAME = "dea_fut_xls_2021.zip";
+    public static final String REPORT_UNZIPPED_FILENAME = "annual.xls";
 
     @Autowired
     private RestTemplate restTemplate;

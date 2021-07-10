@@ -37,7 +37,7 @@ public class ScheduledTask {
         excelFileUtils.saveReportToDb();
 
         log.info("cleaning work directory files.");
-        org.apache.commons.io.FileUtils.cleanDirectory(new File(REPORT_DOWNLOAD_LOCATION));
+//        org.apache.commons.io.FileUtils.cleanDirectory(new File(REPORT_DOWNLOAD_LOCATION));
 
         log.info("task completed successfully.");
     }

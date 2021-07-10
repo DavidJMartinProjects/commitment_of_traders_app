@@ -27,8 +27,8 @@ public class ReportController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<ReportDto> getReports(@RequestParam String instrument) {
-        return reportService.getReportsByInstrument(instrument);
+    public List<ReportDto> getReports(@RequestParam String symbol) {
+        return reportService.getReportsByInstrument(symbol);
     }
 
 }

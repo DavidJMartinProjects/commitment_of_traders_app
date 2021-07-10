@@ -36,7 +36,7 @@ public class ReportDto {
             .replace(" - COMMODITY EXCHANGE INC.", "")
             .replace(" - CHICAGO BOARD OF TRADE", "")
 
-            .replace("EURO FX", "EURO")
+            .replace("EURO FX", "EUR")
             .replace("CANADIAN DOLLAR", "CAD")
             .replace("SWISS FRANC", "CHF")
             .replace("BRITISH POUND STERLING", "GBP")
@@ -46,7 +46,6 @@ public class ReportDto {
             .replace("MEXICAN PESO", "MXN")
             .replace("SOUTH AFRICAN RAND", "ZAR")
             .replace("BITCOIN", "BTC")
-            .replace("MEXICAN PESO", "MXN")
             .replace("NEW ZEALAND DOLLAR", "NZD");
     }
 
