@@ -21,9 +21,9 @@ public class ReportDto {
     private String changeShort;
     private String percentageLong;
     private String percentageShort;
+
     private double longPositions;
     private double shortPositions;
-
     private double netPositions;
 
     public void setInstrument(String instrument) {

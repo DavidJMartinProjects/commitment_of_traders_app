@@ -38,11 +38,12 @@ public class ReportDownloader {
             HttpHeaders headers = new HttpHeaders();
             headers.setAccept(Collections.singletonList(MediaType.APPLICATION_OCTET_STREAM));
             HttpEntity<String> entity = new HttpEntity<>(headers);
-
             ResponseEntity<byte[]> response = restTemplate.exchange(REPORT_DOWNLOAD_URL, HttpMethod.GET, entity, byte[].class);
-            Files.write(Paths.get(REPORT_DOWNLOAD_LOCATION + REPORT_ZIPPED_FILENAME), Objects.requireNonNull(response.getBody()));
 
+            Files.write(Paths.get(REPORT_DOWNLOAD_LOCATION + REPORT_ZIPPED_FILENAME), Objects.requireNonNull(response.getBody()));
         } catch (Exception e) {
+
+            log.info("encountered error downloading cot report file.", e);
             e.printStackTrace();
         }
     }
