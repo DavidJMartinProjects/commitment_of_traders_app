@@ -13,7 +13,7 @@ export class AppComponent {
   title = 'commitment of traders report.';
 
   constructor(private restClient: RestClient) {
-    this.getReportBySymbol('AUD');   
+    // this.getReportBySymbol('AUD');   
   }
 
   data: any; 
@@ -35,11 +35,8 @@ export class AppComponent {
 
   rowData: any; 
 
-  successAlert = false;
-
   public getReportBySymbol(pair: string) {
-    console.log("clicked " + pair);
-    
+    console.log("clicked " + pair);    
 
     this.restClient.getReportBySymbol(pair).subscribe((response: any) => {
       console.log("response: " + response);
