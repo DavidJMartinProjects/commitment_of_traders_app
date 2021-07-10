@@ -1,0 +1,42 @@
+::ng-deep .mat-select-panel{
+    max-height: none!important;
+ }
+
+ .center-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+ .example-additional-selection {
+    opacity: 0.75;
+    font-size: 0.75em;
+  }
+
+  .mat-select-panel {
+      margin: 15px;
+
+  }
+
+.mat-toolbar {
+    background-color: rgba(0,0,0,.04);
+}
+
+table{
+    width: 90%;
+}
+th.mat-sort-header-sorted {
+    color: black;
+  }
+
+//   html, body, app-root, .app-frame {
+//     overflow: hidden;
+//     margin: 0;
+//     height: 100%;
+//     box-sizing: border-box;
+//     color: #e0e0e0;
+// }
+
+// app-root {
+//     background: map-get($mat-dark-theme-background, background );
+//   }

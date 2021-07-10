@@ -1,0 +1,83 @@
+<div class="container-fluid main-container">
+
+  
+    <mat-toolbar>
+      <span>Commitment of Traders</span>
+    </mat-toolbar>  
+
+  
+  
+<div class="row justify-content-center my-3 center-box mx-3">
+  <form>
+  <mat-form-field appearance="fill" color="warning">
+    <mat-label>Select Symbol</mat-label>
+    <mat-select>  
+      <mat-option *ngFor="let symbol of symbols" [value]="symbol.pair" (click)="getReportBySymbol(symbol.pair)">
+        {{symbol.pair}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+</div>
+
+
+
+
+
+<div class="container center-box" *ngIf="reports.length > 0">
+
+
+
+<table mat-table [dataSource]="dataSource">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef> Report Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.reportDate}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="long">
+    <th mat-header-cell *matHeaderCellDef> Long </th>
+    <td mat-cell *matCellDef="let element"> {{element.longPositions}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="shorty">
+    <th mat-header-cell *matHeaderCellDef> Short </th>
+    <td mat-cell *matCellDef="let element"> {{element.shortPositions}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="changeLong">
+    <th mat-header-cell *matHeaderCellDef> Change Long </th>
+    <td mat-cell *matCellDef="let element"> {{element.changeLong}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="changeShort">
+    <th mat-header-cell *matHeaderCellDef> Change Short </th>
+    <td mat-cell *matCellDef="let element"> {{element.changeShort}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="percentLong">
+    <th mat-header-cell *matHeaderCellDef> % Long </th>
+    <td mat-cell *matCellDef="let element"> {{element.percentageLong}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="percentShort">
+    <th mat-header-cell *matHeaderCellDef> % Short </th>
+    <td mat-cell *matCellDef="let element"> {{element.percentageShort}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="netPositions">
+    <th mat-header-cell *matHeaderCellDef> Net Positions </th>
+    <td mat-cell *matCellDef="let element"> {{element.netPositions}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
+</div>
