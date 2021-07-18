@@ -34,3 +34,7 @@ th, td { text-align: center; }
 .mat-radio-button  {
     margin-right: 1em;
 }
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;    
+}
