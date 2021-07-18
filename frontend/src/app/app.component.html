@@ -29,24 +29,33 @@
         <tr>
           <th>Report Date</th>
           <th>Longs</th>
+          <th></th>
           <th>Shorts</th>
+          <th></th>
           <th>Change Long</th>
           <th>Change Short</th>
           <th>% Long</th>
           <th>% Short</th>
           <th>Net Positions</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let group of data">
           <td>{{group.reportDate}}</td>
           <td>{{group.longPositions}}</td>
+          <td *ngIf="group.longPositions < 0"><span class='arrow-down'></span></td>
+          <td *ngIf="group.longPositions > 0"><span class='arrow-up'></span></td>
           <td>{{group.shortPositions}}</td>
+          <td *ngIf="group.shortPositions < 0"><span class='arrow-down'></span></td>
+          <td *ngIf="group.shortPositions > 0"><span class='arrow-up'></span></td>
           <td>{{group.changeLong}}</td>
           <td>{{group.changeShort}}</td>
           <td>{{group.percentageLong}}</td>
           <td>{{group.percentageShort}}</td>
           <td>{{group.netPositions}}</td>
+          <td *ngIf="group.netPositions < 0"><span class='arrow-down'></span></td>
+          <td *ngIf="group.netPositions > 0"><span class='arrow-up'></span></td>
         </tr>
       </tbody>
     </table>
