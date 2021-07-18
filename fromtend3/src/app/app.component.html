@@ -1,0 +1,30 @@
+<div class="container cot-table center-box">
+  <div class="card">
+    <table class="table table-striped table-bordered table-sm row-border hover" id="datatableexample">
+      <thead>
+        <tr>
+          <th>reportDate</th>
+          <th>longPositions</th>
+          <th>shortPositions</th>
+          <th>changeLong</th>
+          <th>changeShort</th>
+          <th>percentageLong</th>
+          <th>percentageShort</th>
+          <th>netPositions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let group of data">
+          <td>{{group.reportDate}}</td>
+          <td>{{group.longPositions}}</td>
+          <td>{{group.shortPositions}}</td>
+          <td>{{group.changeLong}}</td>
+          <td>{{group.changeShort}}</td>
+          <td>{{group.percentageLong}}</td>
+          <td>{{group.percentageShort}}</td>
+          <td>{{group.netPositions}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.cot-table {
+}
+
+.center-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.card {
+    border: black 1px solid;
+    border-color: black;
+    padding: 2em;
+}
