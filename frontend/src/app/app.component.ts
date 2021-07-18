@@ -10,6 +10,7 @@ declare var $: any;
 })
 export class AppComponent implements OnInit {
   dataTable: any;
+  selection: any;
 
   ngOnInit(): void {
     this.dataTable.DataTable();
@@ -33,4 +34,17 @@ export class AppComponent implements OnInit {
       }, 1);
     }, (error: any) => console.error(error));
   }
+
+  getSymbolData(theSymbol:string) {
+    this.http.get('http://localhost:8080/reports?symbol=' + theSymbol).subscribe((data: any) => {
+      this.data = data;
+    }, (error: any) => console.error(error));
+
+  }
+
+  handleChange(theSymbol:string) {
+    console.log("selected: " + theSymbol);
+    this.getSymbolData(theSymbol);
+  }
+  
 }
