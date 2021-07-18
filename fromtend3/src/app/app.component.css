@@ -1,16 +1,23 @@
-.cot-table {
-}
-
-.center-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;    
-}
-
 .card {
-    border: black 1px solid;
-    border-color: black;
     padding: 2em;
+    width: 80%;
 }
 
 th, td { text-align: center; }
+
+.my-logo {
+    width: 60%;
+    height: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;  
+}  
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 85px;
+    padding: 1em;
+
+}
