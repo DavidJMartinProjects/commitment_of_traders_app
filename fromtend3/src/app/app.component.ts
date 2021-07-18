@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-declare var $: (arg0: string) => { (): any; new(): any; DataTable: { (arg0: { pagingType: string; pageLength: number; processing: boolean; lengthMenu: number[]; }): void; new(): any; }; };
+declare var $: any;
 
 @Component({
   selector: 'app-root',
@@ -23,10 +23,12 @@ export class AppComponent implements OnInit {
       this.data = data;
       setTimeout(() => {
         $('#datatableexample').DataTable({
-          pagingType: 'full_numbers',
-          pageLength: 30,
-          processing: true,
-          lengthMenu: [5, 10, 25]
+          "bPaginate": false,
+          "bLengthChange": false,
+          "bFilter": false,
+          "bInfo": false,
+          "bAutoWidth": false,
+          "ordering": false
         });
       }, 1);
     }, (error: any) => console.error(error));
