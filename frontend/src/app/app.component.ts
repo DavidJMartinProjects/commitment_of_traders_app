@@ -10,7 +10,7 @@ declare var $: any;
 })
 export class AppComponent implements OnInit {
   dataTable: any;
-  selection: any;
+  selection:string = 'AUD';
 
   ngOnInit(): void {
     this.dataTable.DataTable();
@@ -46,5 +46,5 @@ export class AppComponent implements OnInit {
     console.log("selected: " + theSymbol);
     this.getSymbolData(theSymbol);
   }
-  
+
 }
