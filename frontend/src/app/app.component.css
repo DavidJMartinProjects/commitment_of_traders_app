@@ -6,11 +6,12 @@
 th, td { text-align: center; }
 
 .my-logo {
-    width: 60%;
-    height: 60%;
+    width: 63%;
+    height: 63%;
     background-position: center;
     background-repeat: no-repeat;
     display: inline-block;  
+    margin-bottom: 2em;
 }  
 
 .center {
@@ -20,4 +21,16 @@ th, td { text-align: center; }
     height: 85px;
     padding: 1em;
 
+}
+
+/* .input[type="radio"]{margin:4em; padding: 4em} */
+
+.my-radio-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5em;
+}
+
+.mat-radio-button  {
+    margin-right: 1em;
 }

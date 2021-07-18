@@ -1,87 +1,52 @@
-<!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo" [containerInside]="false">
-
-  <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand" href="#">Commitment of Traders</a></mdb-navbar-brand>
-
-  <!-- Collapsible content -->
-  <links>
-
-    <!-- Links -->
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link waves-light" mdbWavesEffect>
-          <mdb-icon fas icon="envelope"></mdb-icon> Contact<span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect>
-          <mdb-icon fas icon="cog"></mdb-icon> Settings
-        </a>
-      </li>
-
-      <!-- Dropdown -->
-      <li class="nav-item dropdown" dropdown>
-        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-          <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span>
-        </a>
-        <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log out</a>
-        </div>
-      </li>
-
-    </ul>
-    <!-- Links -->
-  </links>
-  <!-- Collapsible content -->
-
-</mdb-navbar>
-<!--/.Navbar-->
-
-<div class="row justify-content-center my-3">
-  <div class="btn-group" mdbDropdown>
-    <button mdbDropdownToggle type="button" mdbBtn size="sm" color="indigo" class="dropdown-toggle waves-light"
-      mdbWavesEffect>
-      select instrument
-    </button>
-
-    <div class="dropdown-menu">
-      <div *ngFor="let column of colData" class="dropdown-item center-box" (click)="getReportBySymbol(column.pair)">
-        {{column.pair}}
-      </div>
+<div class="container cot-table">
+  <div class="row">
+    <div class="row">
+      <img src="/assets/images/logo.PNG" class="center">
     </div>
+</div>
+
+<div class="row">
+  <div class="card center">
+    <div class="div justify-content-center">
+    <mat-radio-group aria-label="Select an option" class="my-radio-group">
+      <label>AUD <mat-radio-button value="AUD" class=""></mat-radio-button></label>
+      <label>USD <mat-radio-button value="USD" class=""></mat-radio-button></label>
+      <label>EUR <mat-radio-button value="EUR" class=""></mat-radio-button></label>
+      <label>CHF <mat-radio-button value="CHF" class=""></mat-radio-button></label>
+      <label>GBP <mat-radio-button value="GBP" class=""></mat-radio-button></label>
+      <label>CAD <mat-radio-button value="CAD" class=""></mat-radio-button></label>
+      <label>NZD <mat-radio-button value="NZD" class=""></mat-radio-button></label>
+      <label>JPY <mat-radio-button value="JPY" class=""></mat-radio-button></label>
+      <!-- <label>CHF <input type="radio" name="currency"  id="chf_currency" checked="checked" onChange="currencyChanged()" /></label> -->
+    </mat-radio-group>
+    </div>
+
+    <table class="table table-striped table-bordered table-sm row-border hover" id="datatableexample">
+      <thead>
+        <tr>
+          <th>Report Date</th>
+          <th>Longs</th>
+          <th>Shorts</th>
+          <th>Change Long</th>
+          <th>Change Short</th>
+          <th>% Long</th>
+          <th>% Short</th>
+          <th>Net Positions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let group of data">
+          <td>{{group.reportDate}}</td>
+          <td>{{group.longPositions}}</td>
+          <td>{{group.shortPositions}}</td>
+          <td>{{group.changeLong}}</td>
+          <td>{{group.changeShort}}</td>
+          <td>{{group.percentageLong}}</td>
+          <td>{{group.percentageShort}}</td>
+          <td>{{group.netPositions}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
-
-<div class="container" *ngIf="reports.length > 0">
-  
-  <table #table class="table home-table">
-    <thead>
-      <tr>
-        <th class="row-data">Report Date</th>
-        <th class="row-data">Long</th>
-        <th class="row-data">Short</th>
-        <th class="row-data">Change Long</th>
-        <th class="row-data">Change Short</th>
-        <th class="row-data">% Long</th>
-        <th class="row-data">% Short</th>
-        <th class="row-data">Net Positions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let report of reports">
-        <td class="row-data">{{report.reportDate}}</td>
-        <td class="row-data">{{report.longPositions}}</td>
-        <td class="row-data">{{report.shortPositions}}</td>
-        <td class="row-data">{{report.changeLong}}</td>
-        <td class="row-data">{{report.changeShort}}</td>
-        <td class="row-data">{{report.percentageLong}} %</td>
-        <td class="row-data">{{report.percentageShort}} %</td>
-        <td class="row-data">{{report.netPositions}}</td>
-      </tr>
-    </tbody>
-  </table>
-
 </div>
-

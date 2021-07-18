@@ -1,87 +1,36 @@
-import { DataSource } from '@angular/cdk/table';
-import { ReportData } from './../_models/ReportData.model';
-import { Component } from '@angular/core';
-import { RestClient } from 'src/_services/backend.rest.client';
-import { of } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+declare var $: any;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'commitment of traders report.';
-  colData = [
-    { pair: 'AUD' },
-    { pair: 'CAD' },
-    { pair: 'CHF' },
-    { pair: 'EUR' },
-    { pair: 'JPY' },
-    { pair: 'GBP' },
-    { pair: 'MXN' },
-    { pair: 'ZAR' },
-    { pair: 'RUB' },
-    { pair: 'BTC' }
-  ];
+export class AppComponent implements OnInit {
+  dataTable: any;
 
-  columnNames = [
-    {
-      id: 'report_date',
-      value: 'Report Date.',
+  ngOnInit(): void {
+    this.dataTable.DataTable();
+  }
 
-    }, {
-      id: 'long',
-      value: 'Long',
-    },
-    {
-      id: 'short',
-      value: 'Short',
-    },
-    {
-      id: 'change_long',
-      value: 'Change Long',
-    }, {
-      id: 'change_short',
-      value: 'Change Short',
-    },
-    {
-      id: 'percent_long',
-      value: '% Long',
-    }, , {
-      id: 'percent_short',
-      value: '% Short',
-    },
-    {
-      id: 'net_positions',
-      value: 'Net Positions',
-    }];
+  data: any;
+  constructor(private http: HttpClient) {
+    //get request from web api
+    this.http.get('http://localhost:8080/reports?symbol=AUD').subscribe((data: any) => {
 
-constructor(private restClient: RestClient, ) {
-  
-}
-
-data: any;
-reports: ReportData[] = new Array();
-observableReport = of(this.reports);
-
-
-displayedColumns: string[];
-
-ngOnInit() {
-  this.displayedColumns = this.columnNames.map(x => x.id); 
-   
-}
-
-rowData: any; 
-
-  public getReportBySymbol(pair: string) {
-  console.log("clicked " + pair);
-
-  this.restClient.getReportBySymbol(pair).subscribe((response: any) => {
-    console.log("response: " + response);
-    this.reports = response
-    // this.dataSource = response
-  })
-}
-
+      this.data = data;
+      setTimeout(() => {
+        $('#datatableexample').DataTable({
+          "bPaginate": false,
+          "bLengthChange": false,
+          "bFilter": false,
+          "bInfo": false,
+          "bAutoWidth": false,
+          "ordering": false
+        });
+      }, 1);
+    }, (error: any) => console.error(error));
+  }
 }
