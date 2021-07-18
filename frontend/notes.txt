@@ -1,0 +1,5 @@
+https://www.indellient.com/blog/how-to-dockerize-an-angular-application-with-nginx/
+
+docker build -t krish186/sample-angular-app-image:latest  .
+docker run -d -p 8080:80 krish186/sample-angular-app-image:latest
+http://localhost:8080/
