@@ -1,0 +1,14 @@
+https://mherman.org/blog/dockerizing-an-angular-app/
+
+docker build -t example:dev .
+docker run -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --rm example:dev
+
+ToDo:
+add sticky header to datatable
+add up/dpwn arrows for change in Lons/Shorts and et Positions
+
+backend:
+calculate differences so UI can display appopriate arrows and +/- figuresfrom previous week
+
+Change colour of selected radiobox
+add shadowing to the card
