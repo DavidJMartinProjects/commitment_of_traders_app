@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   data: any;
   constructor(private http: HttpClient) {
     //get request from web api
-    this.http.get('http://localhost:8080/reports?symbol=AUD').subscribe((data: any) => {
+    this.http.get('api/reports?symbol=AUD').subscribe((data: any) => {
 
       this.data = data;
       setTimeout(() => {
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
   }
 
   getSymbolData(theSymbol: string) {
-    this.http.get('http://localhost:8080/reports?symbol=' + theSymbol).subscribe((data: any) => {
+    this.http.get('/api/reports?symbol=' + theSymbol).subscribe((data: any) => {
       this.data = data;
     }, (error: any) => console.error(error));
 

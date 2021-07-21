@@ -1,28 +1,18 @@
-# Stage 1: Compile and Build angular codebase
+# Stage 1 - Build React App inside temporary Node container
+# FROM node:carbon-alpine as react-build
+FROM node:12-alpine as builder
 
-# Use official node image as the base image
-FROM node:latest as build
-
-# Set the working directory
-WORKDIR /usr/local/app
-
-# Add the source code to app
-COPY ./ /usr/local/app/
-
-# Install all the dependencies
+WORKDIR /usr/src/app
+COPY . ./
 RUN npm install
+RUN npm run ng build  --prod
 
-# Generate the build of the application
-RUN npm run build
+# Stage 2 - Deploy with NGNIX
+FROM nginx:1.15.2-alpine
 
+COPY --from=builder /usr/src/app/dist/frontend /var/www
+COPY nginx.conf /etc/nginx/nginx.conf
 
-# Stage 2: Serve app with nginx server
+EXPOSE 3000
 
-# Use official nginx image as the base image
-FROM nginx:latest
-
-# Copy the build output to replace the default nginx contents.
-COPY --from=build /usr/local/app/dist/frontend /usr/share/nginx/html
-
-# Expose port 80
-EXPOSE 80
+ENTRYPOINT ["nginx","-g","daemon off;"]

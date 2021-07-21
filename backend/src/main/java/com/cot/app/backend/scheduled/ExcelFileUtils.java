@@ -1,7 +1,7 @@
-package com.cot.app.backend.scheduled.utils;
+package com.cot.app.backend.scheduled;
 
-import static com.cot.app.backend.scheduled.utils.ReportDownloader.REPORT_DOWNLOAD_LOCATION;
-import static com.cot.app.backend.scheduled.utils.ReportDownloader.REPORT_UNZIPPED_FILENAME;
+import static com.cot.app.backend.scheduled.ReportDownloader.REPORT_DOWNLOAD_LOCATION;
+import static com.cot.app.backend.scheduled.ReportDownloader.REPORT_UNZIPPED_FILENAME;
 
 import java.io.File;
 import java.io.FileInputStream;

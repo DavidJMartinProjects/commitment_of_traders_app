@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta19
+kind: Config
+metadata:
+  name: commitment-of-traders-app
+build:
+  local:
+    concurrency: 0 #builds all artifacts in parallel
+requires:
+  - path: ./backend
+  - path: ./api-gateway
+  - path: ./frontend
+deploy:
+  kubectl:
+    manifests:
+      - ./api-gateway/k8/ingress.yaml

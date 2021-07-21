@@ -28,6 +28,7 @@ public class ReportController {
 
     @GetMapping(REPORTS_URL)
     @ResponseStatus(HttpStatus.OK)
+    @CrossOrigin(origins = "http://localhost:80")
     public List<ReportDto> getReports(@RequestParam String symbol) {
         return reportService.getReportsByInstrument(symbol);
     }

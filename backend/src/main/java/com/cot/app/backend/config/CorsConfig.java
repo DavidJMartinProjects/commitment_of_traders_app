@@ -33,6 +33,7 @@ public class CorsConfig {
             Arrays.asList(
                 "http://localhost:4200",
                 "http://localhost:80",
+                "https://localhost/",
                 "http://localhost:8080",
                 "http://localhost:8081"
             )

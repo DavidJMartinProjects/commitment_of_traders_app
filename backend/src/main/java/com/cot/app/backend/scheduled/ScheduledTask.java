@@ -1,16 +1,10 @@
 package com.cot.app.backend.scheduled;
 
-import static com.cot.app.backend.scheduled.utils.ReportDownloader.REPORT_DOWNLOAD_LOCATION;
-
-import java.io.File;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cot.app.backend.scheduled.utils.ExcelFileUtils;
-import com.cot.app.backend.scheduled.utils.ReportDownloader;
-import com.cot.app.backend.scheduled.utils.FileUtils;
 import lombok.extern.slf4j.Slf4j;
 
 /**

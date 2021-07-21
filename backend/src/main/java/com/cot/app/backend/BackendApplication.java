@@ -23,11 +23,11 @@ public class BackendApplication {
 		SpringApplication.run(BackendApplication.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner CommandLineRunnerBean() {
-		return (args) -> {
-			scheduledTask.importReport();
-		};
-	}
+	 @Bean
+	 public CommandLineRunner CommandLineRunnerBean() {
+	 	return (args) -> {
+	 		scheduledTask.importReport();
+	 	};
+	 }
 
 }
