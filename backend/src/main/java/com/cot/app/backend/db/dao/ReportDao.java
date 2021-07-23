@@ -31,7 +31,7 @@ public class ReportDao implements DbOperation<ReportDto> {
         log.info("fetching cot reports.");
         return reportRepository.findAll()
             .stream()
-            .map(gameEntity -> mapper.toDto(gameEntity, ReportDto.class))
+            .map(entity -> mapper.toDto(entity, ReportDto.class))
             .collect(Collectors.toList());
     }
 

@@ -1,11 +1,10 @@
 package com.cot.app.backend.db.dao.repository;
 
-import java.util.List;
-
+import com.cot.app.backend.db.dao.entity.ReportEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.cot.app.backend.db.dao.entity.ReportEntity;
+import java.util.List;
 
 /**
  * @author davidjmartin

@@ -12,13 +12,6 @@ spec:
   - host: ingress.local
     http:
       paths:
-      - path: /api
-        pathType: Prefix
-        backend:
-          service:
-            name:  api-gateway-service
-            port: 
-              number: 8080
       - path: /
         pathType: Prefix
         backend:
@@ -26,3 +19,20 @@ spec:
             name:  frontend-service
             port: 
               number: 80
+
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name:  api-gateway-service
+            port: 
+              number: 8080
+
+      - path: /auth
+        pathType: Prefix
+        backend:
+          service:
+            name:  keycloak
+            port: 
+              number: 80
+

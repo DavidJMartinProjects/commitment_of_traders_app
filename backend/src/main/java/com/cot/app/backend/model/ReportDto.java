@@ -5,6 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 /**
  * @author DavidJMartin
  */
@@ -15,15 +18,16 @@ import lombok.NoArgsConstructor;
 public class ReportDto {
 
     private String instrument;
-    private String reportDate;
-
-    private String changeLong;
-    private String changeShort;
-    private String percentageLong;
-    private String percentageShort;
+    private String  reportDate;
 
     private double longPositions;
     private double shortPositions;
+    private String changeLong;
+    private String changeShort;
+
+    private String percentageLong;
+    private String percentageShort;
+
     private double netPositions;
 
     public void setInstrument(String instrument) {

@@ -1,0 +1,23 @@
+
+===================================================================================
+//Install Nginx Ingress
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.48.1/deploy/static/provider/cloud/deploy.yaml
+
+// update windows hosts file
+file location: c:/windows/system32/drivers/etc/hosts
+127.0.0.1 ingress.local
+
+===================================================================================
+// install Keycloak to cluster
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update
+helm install keycloak bitnami/keycloak --set auth.adminPassword=ADMIN-PASSWORD
+
+// Accessing the Admin Panel:
+port-forward the keycloak service to port 8080 or set route in ingress
+go to url: http://127.0.0.1:8080/auth/
+U: user
+P: ADMIN-PASSWORD
+
+admin panel @ http://ingress.local/auth/
+===================================================================================

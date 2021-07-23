@@ -8,6 +8,10 @@ spec:
   rules:
     - http:
         paths:
+          - path: /auth/?(.*)
+            backend:
+              serviceName: keycloak
+              servicePort: 8080
           - path: /api/?(.*)
             backend:
               serviceName: backend-service

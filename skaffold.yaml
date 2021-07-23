@@ -10,6 +10,14 @@ requires:
   - path: ./api-gateway
   - path: ./frontend
 deploy:
+  helm:
+    releases:
+    - name: keycloak
+      chartPath: ./keycloak
+      setValues:        
+        auth.adminPassword: ADMIN-PASSWORD
   kubectl:
-    manifests:
+    manifests:      
       - ./api-gateway/k8/ingress.yaml
+
+
