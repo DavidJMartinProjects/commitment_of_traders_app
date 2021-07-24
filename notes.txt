@@ -23,4 +23,4 @@ URLS:
 
 frontend: /
 api-gateway: /api
-keycloak admin panel: localhost:80/auth
+keycloak admin panel: localhost:81/auth
