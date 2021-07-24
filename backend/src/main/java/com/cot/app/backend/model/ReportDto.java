@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -15,7 +16,10 @@ import java.time.format.DateTimeFormatter;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReportDto {
+public class ReportDto implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    private long id;
 
     private String instrument;
     private String  reportDate;
@@ -27,6 +31,8 @@ public class ReportDto {
 
     private String percentageLong;
     private String percentageShort;
+    private String percentageLongChange;
+    private String percentageShortChange;
 
     private double netPositions;
 

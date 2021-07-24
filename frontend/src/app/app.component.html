@@ -36,6 +36,8 @@
           <th>Change Short</th>
           <th>% Long</th>
           <th>% Short</th>
+          <th>% Long Change</th>
+          <th>% Short Change</th>
           <th>Net Positions</th>
           <th></th>
         </tr>
@@ -53,6 +55,8 @@
           <td>{{group.changeShort}}</td>
           <td>{{group.percentageLong}}</td>
           <td>{{group.percentageShort}}</td>
+          <td>{{group.percentageLongChange}}</td>
+          <td>{{group.percentageShortChange}}</td>
           <td>{{group.netPositions}}</td>
           <td *ngIf="group.netPositions < 0"><span class='arrow-down'></span></td>
           <td *ngIf="group.netPositions > 0"><span class='arrow-up'></span></td>

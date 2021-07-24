@@ -38,9 +38,6 @@ public class ExcelFileUtils {
 
     private static final int FIRST_SHEET_POSITION = 0;
 
-    private static String oldPercentageLong = "0";
-    private static String oldPercentageShort = "0";
-
     @Autowired
     private DbOperation<ReportDto> dbOperation;
 

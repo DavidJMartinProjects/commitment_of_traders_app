@@ -12,4 +12,5 @@ import java.util.List;
 @Repository
 public interface ReportRepository extends JpaRepository<ReportEntity, Long> {
     List<ReportEntity> findByInstrument(String instrument);
+    void deleteByInstrument(String name);
 }

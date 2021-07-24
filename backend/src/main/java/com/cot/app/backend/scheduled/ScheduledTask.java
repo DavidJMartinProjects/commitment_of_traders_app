@@ -20,6 +20,9 @@ public class ScheduledTask {
     @Autowired
     private ReportDownloader reportDownloader;
 
+    @Autowired
+    private DataProcessor dataProcessor;
+
     public void importReport() throws IOException {
         log.info("downloading latest cot report");
         reportDownloader.downloadFile();
@@ -30,8 +33,13 @@ public class ScheduledTask {
         log.info("saving Report To Db");
         excelFileUtils.saveReportToDb();
 
+        log.info("processing data...");
+        dataProcessor.processData();
+
         log.info("cleaning work directory files.");
 //        org.apache.commons.io.FileUtils.cleanDirectory(new File(REPORT_DOWNLOAD_LOCATION));
+
+
 
         log.info("task completed successfully.");
     }

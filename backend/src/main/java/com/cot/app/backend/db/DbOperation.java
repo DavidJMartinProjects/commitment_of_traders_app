@@ -1,5 +1,7 @@
 package com.cot.app.backend.db;
 
+import com.cot.app.backend.model.SupportedSymbol;
+
 import java.util.List;
 
 /**
@@ -33,5 +35,19 @@ public interface DbOperation<T> {
      * @return the list of found entity
      */
     List<T> findAll(String filter);
+
+    /**
+     * Delete all records.
+     *
+     * @return the list of found entity
+     */
+    void deleteAll();
+
+    /**
+     * Delete by Symbol.
+     *
+     * @return the list of found entity
+     */
+    void deleteBySymbol(SupportedSymbol symbol);
 
 }

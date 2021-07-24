@@ -1,17 +1,17 @@
 package com.cot.app.backend.db.dao;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import com.cot.app.backend.db.DbOperation;
 import com.cot.app.backend.db.dao.entity.ReportEntity;
 import com.cot.app.backend.db.dao.mapper.ReportMapper;
 import com.cot.app.backend.db.dao.repository.ReportRepository;
 import com.cot.app.backend.model.ReportDto;
+import com.cot.app.backend.model.SupportedSymbol;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author davidjmartin
@@ -42,6 +42,19 @@ public class ReportDao implements DbOperation<ReportDto> {
             .stream()
             .map(entity -> mapper.toDto(entity, ReportDto.class))
             .collect(Collectors.toList());
+    }
+
+    @Override
+    public void deleteAll() {
+        log.info("deleting all records");
+        reportRepository.deleteAll();
+    }
+
+    @Override
+    public void deleteBySymbol(SupportedSymbol symbol) {
+        log.info("deleting records by symbol: {}", symbol);
+        reportRepository.deleteByInstrument(symbol.name());
+
     }
 
     @Override

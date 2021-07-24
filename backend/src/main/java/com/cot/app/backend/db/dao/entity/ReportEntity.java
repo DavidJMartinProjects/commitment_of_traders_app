@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author davidjmartin
@@ -16,7 +17,9 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReportEntity {
+public class ReportEntity implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,6 +36,8 @@ public class ReportEntity {
 
     private String percentageLong;
     private String percentageShort;
+    private String percentageLongChange;
+    private String percentageShortChange;
 
     private String netPositions;
 
