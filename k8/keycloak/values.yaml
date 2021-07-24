@@ -598,7 +598,7 @@ service:
   type: LoadBalancer
   ## @param service.port Service HTTP port
   ##
-  port: 80
+  port: 81
   ## @param service.httpsPort HTTPS Port
   ##
   httpsPort: 443

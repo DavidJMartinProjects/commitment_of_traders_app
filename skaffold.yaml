@@ -10,14 +10,18 @@ requires:
   - path: ./api-gateway
   - path: ./frontend
 deploy:
+
   helm:
     releases:
+    - name: ingress-nginx
+      chartPath: ./k8/ingress-nginx
     - name: keycloak
-      chartPath: ./keycloak
+      chartPath: ./k8/keycloak
       setValues:        
         auth.adminPassword: ADMIN-PASSWORD
+        
   kubectl:
-    manifests:      
+    manifests:   
       - ./api-gateway/k8/ingress.yaml
 
 
