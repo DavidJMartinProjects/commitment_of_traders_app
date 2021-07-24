@@ -21,6 +21,6 @@ P: ADMIN-PASSWORD
 
 URLS:
 
-frontend: /
-api-gateway: /api
+frontend: ingress.local/
+api-gateway: ingress.local/api
 keycloak admin panel: localhost:81/auth
