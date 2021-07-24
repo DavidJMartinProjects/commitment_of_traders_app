@@ -17,10 +17,13 @@ export class AppComponent implements OnInit {
   }
 
   data: any;
+  showSpinner = true;
+
   constructor(private http: HttpClient) {
     //get request from web api
     this.http.get('api/reports?symbol=AUD').subscribe((data: any) => {
 
+      this.showSpinner = false;
       this.data = data;
       setTimeout(() => {
         $('#datatableexample').DataTable({
