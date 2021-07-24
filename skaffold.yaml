@@ -6,9 +6,9 @@ build:
   local:
     concurrency: 0 #builds all artifacts in parallel
 requires:
-  - path: ./backend
-  - path: ./api-gateway
   - path: ./frontend
+  - path: ./api-gateway
+  - path: ./backend  
 deploy:
 
   helm:
