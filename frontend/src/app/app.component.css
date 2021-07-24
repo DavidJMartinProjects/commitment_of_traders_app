@@ -56,3 +56,7 @@ th, td { text-align: center; }
 	transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 }
+
+.spinner ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #000000;
+}

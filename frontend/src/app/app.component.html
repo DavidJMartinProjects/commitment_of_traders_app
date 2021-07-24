@@ -67,8 +67,10 @@
       </table>
     </div>
     <div *ngIf="showSpinner" style="display: flex; justify-content: center; align-items: center; background: white;">
-      <mat-progress-spinner diameter="40" color="primary" mode="indeterminate">
+    <div class="spinner">
+      <mat-progress-spinner diameter="40" mode="indeterminate">
       </mat-progress-spinner>
+    </div>
     </div>
   </div>
 </div>
