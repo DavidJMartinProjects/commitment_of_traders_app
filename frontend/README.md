@@ -7,6 +7,7 @@
     ng add angular-datatables - save 
     ng add @types/jquery - save 
     ng add @types/datatables.net - save 
+    
     ng add bootstrap - save 
     ng add @angular/material - save 
 
