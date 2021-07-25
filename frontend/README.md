@@ -1,6 +1,6 @@
 # OAuth 2.0/OpenId Connect secured Angular Frontend
 
-## development dependencies
+## Development dependencies
     ng add jquery - save 
     ng add datatables.net - save 
     ng add datatables.net-dt - save 
@@ -13,7 +13,7 @@
     ng add keycloak-angular - save 
     ng add keycloak-js - save
 
-## Run the cluster locally
+## Run the k8 cluster Locally
 This project can be run locally as a kubernetes cluster using skaffold.
 From the root directory, run the below command:
 ```
