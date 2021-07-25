@@ -58,7 +58,7 @@
           </tr>
         </tbody>
       </table>
-      <button class="logout-button" (click)="logout()">logout</button>
+      <button *ngIf="showLogoutButton" class="logout-button" (click)="logout()">logout</button>
     </div>
     <div *ngIf="showSpinner" style="display: flex; justify-content: center; align-items: center; background: white;">
     <div class="spinner">

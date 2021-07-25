@@ -15,6 +15,7 @@ export class CotReportComponent implements OnInit {
   data: any;
   selection: string = 'AUD';
   showSpinner = true;
+  showLogoutButton = false;
 
   constructor(private http: HttpClient, private router: Router, private keycloakService: KeycloakService) {
     //get request from web api
@@ -22,6 +23,7 @@ export class CotReportComponent implements OnInit {
     this.http.get(`/api/reports?symbol=AUD`).subscribe((data: any) => {
       this.data = data;
       this.showSpinner = false;
+      this.showLogoutButton = true;
       setTimeout(() => {
         $('#datatableexample').DataTable({
           "bPaginate": false,
