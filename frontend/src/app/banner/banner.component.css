@@ -1,0 +1,15 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 85px;
+    padding: 1em;
+}
+
+.logout-button {
+    display: block;
+    margin-left: auto;
+    /* margin-right: auto;     */
+    margin-top: 1em;
+}
+

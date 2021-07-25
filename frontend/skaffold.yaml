@@ -1,7 +1,7 @@
 apiVersion: skaffold/v2beta19
 kind: Config
 metadata:
-  name: frontend
+  name: frontend4
 build:
   artifacts:
   - image: frontend-service
