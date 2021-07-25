@@ -1,8 +1,28 @@
-# Frontend4
+# OAuth 2.0/OpenId Connect secured Angular Frontend
+
+## development dependencies
+    ng add jquery - save 
+    ng add datatables.net - save 
+    ng add datatables.net-dt - save 
+    ng add angular-datatables - save 
+    ng add @types/jquery - save 
+    ng add @types/datatables.net - save 
+    ng add bootstrap - save 
+    ng add @angular/material - save 
+
+    ng add keycloak-angular - save 
+    ng add keycloak-js - save
+
+## Run the cluster locally
+This project can be run locally as a kubernetes cluster using skaffold.
+From the root directory, run the below command:
+```
+skaffold run
+```
+## Development server
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
-## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
@@ -22,6 +42,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
